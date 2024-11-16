@@ -1,0 +1,30 @@
+/* Add spacing and alignment for comments */
+.view-user .row .col {
+    padding-top: 10px;
+}
+
+/* Style the breadcrumb for better visibility */
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Adjust the table's spacing and borders */
+.table {
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-primary {
+    color: #007bff !important; /* Bootstrap primary color */
+}
+
+.text-secondary {
+    font-weight: bold;
+}

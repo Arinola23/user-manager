@@ -1,0 +1,105 @@
+{{!-- <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Details</li>
+  </ol>
+</nav>
+
+<div class="view-user p-5">
+    {{#each rows}}
+            <div class="row mb-5">
+                <div class="col text-center">
+                    <h3>{{this.firstName}} {{this.lastName}}</h3>
+                </div>
+            </div>
+
+         <div class="row">
+            <div class="col">
+                <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{this.id}}</th>
+                                <td>{{this.firstName}}</td>
+                                <td>{{this.lastName}}</td>
+                                <td>{{this.email}}</td>
+                                <td>{{this.phone}}</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+                    <div class="row">
+                        <div class="col">
+                            <b>Comments</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{this.comments}}
+                        </div>
+                    </div>
+        </div>
+  {{/each}}
+</div> --}}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Details</li>
+  </ol>
+</nav>
+
+<div class="view-user p-5">
+    {{#each rows}}
+        <div class="row mb-5">
+            <div class="col text-center">
+        <h3 class="text-primary" style="text-transform: capitalize;">{{this.firstName}} {{this.lastName}}</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td style="text-transform: capitalize;">{{this.firstName}}</td>
+                            <td style="text-transform: capitalize;">{{this.lastName}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.phone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <b class="text-secondary">Comment:</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-muted">{{this.comments}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>

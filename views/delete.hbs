@@ -1,0 +1,67 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Delete Details</li>
+  </ol>
+</nav>
+
+{{#if alert}} 
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <span>{{alert}} <a href="/" class="alert-link ms-2">Go to home page</a></span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}
+
+{{!-- <div class="alert alert-danger mt-3">
+    <p>Are you sure you want to delete or <a href="/edituser">edit this details</a>?</p>
+</div> --}}
+
+<div class="view-user p-5">
+    {{#each rows}}
+        <div class="row mb-5">
+            <div class="col text-center">
+        <h3 class="text-primary" style="text-transform: capitalize;">{{this.firstName}} {{this.lastName}}</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{this.id}}</th>
+                            <td style="text-transform: capitalize;">{{this.firstName}}</td>
+                            <td style="text-transform: capitalize;">{{this.lastName}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.phone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <b class="text-secondary">Comment:</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-muted">{{this.comments}}</p>
+            </div>
+        </div>
+        <!-- Delete Button Form styled outside the table -->
+        <form method="POST" action="/deleteuser/{{this.id}}" class="mt-3">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    {{/each}}
+</div>
